@@ -25,7 +25,7 @@ Or install it yourself as:
 Let's say that we want to incorporate Android resources from an assets generator:
 
 ```ruby
-source = RemoteZip.new("http://assets-generator.com/android/res.zip")
+source = RemoteZip::Reader.new("http://assets-generator.com/android/res.zip")
 source.each_file_with_path do |file, path|
   # path is a path to the file in the zip, i.e. drawable-xxhdpi/ic_launcher.png
   variant = ImageVariant.find_by!(path: path)
